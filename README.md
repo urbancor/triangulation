@@ -16,17 +16,13 @@ The Delaunay Triangulation maximizes the minimal angle in a triangulation. I imp
 
 Triangulation is Delaunay if and only if every edge in a triangulation is locally Delaunay. We can check for every edge if it is locally Delaunay by using simple in circle test.
 
-Given three points \(A(x_a, y_a)\), \(B(x_b, y_b)\), and \(C(x_c, y_c)\), and a fourth point \(P(x_p, y_p)\), the in-circle test checks whether \(P\) is inside the circumcircle of triangle \(ABC\).
+Given three points $A(A_x, A_y)$, $B(B_x, B_y)$, and $C(C_x, C_y)$, and a fourth point $D(D_x, D_y)$, the in-circle test checks whether $D$ is inside the circumcircle of triangle $ABC$.
 
 The test involves calculating the determinant of a matrix:
 
-\[ \begin{vmatrix}
-x_a - x_p & y_a - y_p & (x_a - x_p)^2 + (y_a - y_p)^2 \\
-x_b - x_p & y_b - y_p & (x_b - x_p)^2 + (y_b - y_p)^2 \\
-x_c - x_p & y_c - y_p & (x_c - x_p)^2 + (y_c - y_p)^2 \\
-\end{vmatrix} \]
+![In circle test](./images/incircle-test.svg)
 
-If the determinant is positive, point \(P\) lies outside the circumcircle; if it's negative, \(P\) lies inside; and if it's zero, \(P\) is on the circle's boundary.
+If the determinant is positive, point $D$ lies outside the circumcircle; if it's negative, $D$ lies inside; and if it's zero, $D$ is on the circle's boundary.
 
 If the point is inside we perform an edge flip.
 
